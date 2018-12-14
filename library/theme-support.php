@@ -122,9 +122,9 @@ if ( ! function_exists( 'gutencore_theme_support' ) ) :
 		 * Comment.
 		 * @todo is editor-styles for Classic Editor?
 		 */
-		add_theme_support( 'editor-styles' );
+		// add_theme_support( 'editor-styles' );
 
-		add_editor_style( get_stylesheet_directory_uri() . '/dist/assets/css/editor.css' );
+		// add_editor_style( get_stylesheet_directory_uri() . '/dist/assets/css/editor.css' );
 
 		// Add foundation.css as editor style https://codex.wordpress.org/Editor_Style
 		// add_editor_style( 'dist/assets/css/' . gutencore_asset_path( 'editor.css' ) );

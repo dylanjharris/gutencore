@@ -136,37 +136,37 @@ if ( ! function_exists('gutencore_gutenberg_editor_font_sizes') ) {
         // start with defaults
         $editor_font_sizes = array(
             array(
-                'name' => __( 'small', 'gutencore' ),
+                'name' => __( 'Small', 'gutencore' ),
                 'shortName' => __( 'S', 'gutencore' ),
                 'size' => 13,
                 'slug' => 'small'
             ),
             array(
-                'name' => __( 'regular', 'gutencore' ),
-                'shortName' => __( 'M (H4)', 'gutencore' ),
+                'name' => __( 'Regular', 'gutencore' ),
+                'shortName' => __( 'M', 'gutencore' ),
                 'size' => 16,
                 'slug' => 'regular'
             ),
             array(
-                'name' => __( 'large', 'gutencore' ),
-                'shortName' => __( 'L (H3)', 'gutencore' ),
+                'name' => __( 'Large', 'gutencore' ),
+                'shortName' => __( 'L', 'gutencore' ),
                 'size' => 20,
                 'slug' => 'large'
             ),
             array(
-                'name' => __( 'h2', 'gutencore' ),
-                'shortName' => __( 'H2', 'gutencore' ),
+                'name' => __( 'Larger', 'gutencore' ),
+                'shortName' => __( 'XL', 'gutencore' ),
                 'size' => 26,
-                'slug' => 'h2'
+                'slug' => 'larger'
             ),
             array(
-                'name' => __( 'h1', 'gutencore' ),
+                'name' => __( 'Heading', 'gutencore' ),
                 'shortName' => __( 'H1', 'gutencore' ),
                 'size' => 33,
-                'slug' => 'h1'
+                'slug' => 'heading'
             ),
             array(
-                'name' => __( 'hero', 'gutencore' ),
+                'name' => __( 'Hero', 'gutencore' ),
                 'shortName' => __( 'Hero', 'gutencore' ),
                 'size' => 42,
                 'slug' => 'hero'
