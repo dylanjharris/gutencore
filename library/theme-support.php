@@ -120,7 +120,8 @@ if ( ! function_exists( 'gutencore_theme_support' ) ) :
 		/**
 		 *                                                  djh Dec 14, 2018
 		 * Comment.
-		 * @todo is editor-styles for Classic Editor?
+		 * @todo configure Gutenberg editor styles
+		 * @link https://www.paulchinmoy.com/change-gutenberg-editors-default-font/
 		 */
 		// add_theme_support( 'editor-styles' );
 

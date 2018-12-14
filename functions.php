@@ -59,3 +59,6 @@ require_once( 'library/gutenberg.php' );
 
 /** Advanced Custom Fields support */
 require_once( 'library/acf.php' );
+
+/** Helper classes */
+require_once( 'library/helpers.php' );
