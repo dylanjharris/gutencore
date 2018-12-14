@@ -27,9 +27,8 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 
-
 /*----------------------------------------------djh Dec 12, 2018
-  ACF Theme Settings Option: WooCommerce Cart Fragments
+  ACF Theme Setting: WooCommerce Cart Fragments
 ----------------------------------------------*/
 if ( ! function_exists('undercore_disable_cart_fragments') ) {
     function undercore_disable_cart_fragments() {
