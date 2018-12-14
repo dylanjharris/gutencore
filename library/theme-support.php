@@ -37,6 +37,12 @@ if ( ! function_exists( 'gutencore_theme_support' ) ) :
 		// Add post formats support: http://codex.wordpress.org/Post_Formats
 		add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
 
+		// Set up the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'undercore_custom_background_args', array(
+			'default-color' => 'ffffff',
+			'default-image' => '',
+		) ) );
+
 		// Additional theme support for woocommerce 3.0.+
 		add_theme_support( 'wc-product-gallery-zoom' );
 		add_theme_support( 'wc-product-gallery-lightbox' );
