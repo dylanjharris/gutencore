@@ -173,7 +173,7 @@ msgstr "Úgy tűnik, nem találtuk meg amit kerestünk. :) Talán, egy újabb ke
 #. /archive/search.
 #. *
 #. * @subpackage FoundationPress
-#. * @since FoundationPress 1.0.0
+#. * @since GutenCore 1.0.0
 #.
 #: content.php:16
 msgid "Continue reading..."

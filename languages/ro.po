@@ -190,7 +190,7 @@ msgstr "Nu am găsit ceea ce căutai. Folosește formularul de căutare."
 #. /archive/search.
 #. *
 #. * @subpackage FoundationPress
-#. * @since FoundationPress 1.0.0
+#. * @since GutenCore 1.0.0
 #.
 #: content.php:16
 msgid "Continue reading..."

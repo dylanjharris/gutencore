@@ -3,8 +3,8 @@
  * The default template for displaying page content
  *
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package GutenCore
+ * @since GutenCore 1.0.0
  */
 
 ?>
@@ -15,13 +15,13 @@
 	</header>
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( '(Edit)', 'gutencore' ), '<span class="edit-link">', '</span>' ); ?>
 	</div>
 	<footer>
 		<?php
 			wp_link_pages(
 				array(
-					'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
+					'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'gutencore' ),
 					'after'  => '</p></nav>',
 				)
 			);

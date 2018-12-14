@@ -2,13 +2,13 @@
 /**
  * Foundation PHP template
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package GutenCore
+ * @since GutenCore 1.0.0
  */
 
 // Pagination.
-if ( ! function_exists( 'foundationpress_pagination' ) ) :
-	function foundationpress_pagination() {
+if ( ! function_exists( 'gutencore_pagination' ) ) :
+	function gutencore_pagination() {
 		global $wp_query;
 
 		$big = 999999999; // This needs to be an unlikely integer
@@ -22,8 +22,8 @@ if ( ! function_exists( 'foundationpress_pagination' ) ) :
 				'total'     => $wp_query->max_num_pages,
 				'mid_size'  => 5,
 				'prev_next' => true,
-				'prev_text' => __( '&laquo;', 'foundationpress' ),
-				'next_text' => __( '&raquo;', 'foundationpress' ),
+				'prev_text' => __( '&laquo;', 'gutencore' ),
+				'next_text' => __( '&raquo;', 'gutencore' ),
 				'type'      => 'list',
 			)
 		);
@@ -43,12 +43,12 @@ if ( ! function_exists( 'foundationpress_pagination' ) ) :
 endif;
 
 // Custom Comments Pagination.
-if ( ! function_exists( 'foundationpress_get_the_comments_pagination' ) ) :
-	function foundationpress_get_the_comments_pagination( $args = array() ) {
+if ( ! function_exists( 'gutencore_get_the_comments_pagination' ) ) :
+	function gutencore_get_the_comments_pagination( $args = array() ) {
 		$navigation = '';
 		$args = wp_parse_args( $args, array(
-			'prev_text'				=> __( '&laquo;', 'foundationpress' ),
-			'next_text'				=> __( '&raquo;', 'foundationpress' ),
+			'prev_text'				=> __( '&laquo;', 'gutencore' ),
+			'next_text'				=> __( '&raquo;', 'gutencore' ),
 			'size'					=> 'default',
 			'show_disabled'			=> true,
 		) );
@@ -96,9 +96,9 @@ if ( ! function_exists( 'foundationpress_get_the_comments_pagination' ) ) :
 endif;
 
 // Custom Comments Pagination.
-if ( ! function_exists( 'foundationpress_the_comments_pagination' ) ) :
-	function foundationpress_the_comments_pagination( $args = array() ) {
-		echo foundationpress_get_the_comments_pagination( $args );
+if ( ! function_exists( 'gutencore_the_comments_pagination' ) ) :
+	function gutencore_the_comments_pagination( $args = array() ) {
+		echo gutencore_get_the_comments_pagination( $args );
 	}
 endif;
 
@@ -107,20 +107,20 @@ endif;
  * A fallback when no navigation is selected by default.
  */
 
-if ( ! function_exists( 'foundationpress_menu_fallback' ) ) :
-	function foundationpress_menu_fallback() {
+if ( ! function_exists( 'gutencore_menu_fallback' ) ) :
+	function gutencore_menu_fallback() {
 		echo '<div class="alert-box secondary">';
 		/* translators: %1$s: link to menus, %2$s: link to customize. */
 		printf(
-			__( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'foundationpress' ),
+			__( 'Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'gutencore' ),
 			/* translators: %s: menu url */
 			sprintf(
-				__( '<a href="%s">Menus</a>', 'foundationpress' ),
+				__( '<a href="%s">Menus</a>', 'gutencore' ),
 				get_admin_url( get_current_blog_id(), 'nav-menus.php' )
 			),
 			/* translators: %s: customize url */
 			sprintf(
-				__( '<a href="%s">Customize</a>', 'foundationpress' ),
+				__( '<a href="%s">Customize</a>', 'gutencore' ),
 				get_admin_url( get_current_blog_id(), 'customize.php' )
 			)
 		);
@@ -129,22 +129,22 @@ if ( ! function_exists( 'foundationpress_menu_fallback' ) ) :
 endif;
 
 // Add Foundation 'is-active' class for the current menu item.
-if ( ! function_exists( 'foundationpress_active_nav_class' ) ) :
-	function foundationpress_active_nav_class( $classes, $item ) {
+if ( ! function_exists( 'gutencore_active_nav_class' ) ) :
+	function gutencore_active_nav_class( $classes, $item ) {
 		if ( $item->current == 1 || $item->current_item_ancestor == true ) {
 			$classes[] = 'is-active';
 		}
 		return $classes;
 	}
-	add_filter( 'nav_menu_css_class', 'foundationpress_active_nav_class', 10, 2 );
+	add_filter( 'nav_menu_css_class', 'gutencore_active_nav_class', 10, 2 );
 endif;
 
 /**
  * Use the is-active class of ZURB Foundation on wp_list_pages output.
  * From required+ Foundation http://themes.required.ch.
  */
-if ( ! function_exists( 'foundationpress_active_list_pages_class' ) ) :
-	function foundationpress_active_list_pages_class( $input ) {
+if ( ! function_exists( 'gutencore_active_list_pages_class' ) ) :
+	function gutencore_active_list_pages_class( $input ) {
 
 		$pattern = '/current_page_item/';
 		$replace = 'current_page_item is-active';
@@ -153,7 +153,7 @@ if ( ! function_exists( 'foundationpress_active_list_pages_class' ) ) :
 
 		return $output;
 	}
-	add_filter( 'wp_list_pages', 'foundationpress_active_list_pages_class', 10, 2 );
+	add_filter( 'wp_list_pages', 'gutencore_active_list_pages_class', 10, 2 );
 endif;
 
 
@@ -162,8 +162,8 @@ endif;
  * Get mobile menu ID
  */
 
-if ( ! function_exists( 'foundationpress_mobile_menu_id' ) ) :
-	function foundationpress_mobile_menu_id() {
+if ( ! function_exists( 'gutencore_mobile_menu_id' ) ) :
+	function gutencore_mobile_menu_id() {
 		if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) {
 			echo 'off-canvas-menu';
 		} else {
@@ -176,8 +176,8 @@ endif;
  * Get title bar responsive toggle attribute
  */
 
-if ( ! function_exists( 'foundationpress_title_bar_responsive_toggle' ) ) :
-	function foundationpress_title_bar_responsive_toggle() {
+if ( ! function_exists( 'gutencore_title_bar_responsive_toggle' ) ) :
+	function gutencore_title_bar_responsive_toggle() {
 		if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) {
 			echo 'data-responsive-toggle="mobile-menu"';
 		}
@@ -187,8 +187,8 @@ endif;
 /**
  * Custom markup for Wordpress gallery
  */
-if ( ! function_exists( 'foundationpress_gallery' ) ) :
-	function foundationpress_gallery($attr) {
+if ( ! function_exists( 'gutencore_gallery' ) ) :
+	function gutencore_gallery($attr) {
 
 		$post = get_post();
 		static $instance = 0;
@@ -318,5 +318,5 @@ if ( ! function_exists( 'foundationpress_gallery' ) ) :
 
 		return $output;
 	}
-	add_shortcode('gallery', 'foundationpress_gallery');
+	add_shortcode('gallery', 'gutencore_gallery');
 endif;

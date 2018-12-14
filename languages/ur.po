@@ -180,7 +180,7 @@ msgstr "ایسا لگتا ہے کہ ہم آپ کو تلاش نہیں کر سکت
 #. /archive/search.
 #. *
 #. * @subpackage FoundationPress
-#. * @since FoundationPress 1.0.0
+#. * @since GutenCore 1.0.0
 #.
 #: content.php:16
 msgid "Continue reading..."

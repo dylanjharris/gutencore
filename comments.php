@@ -5,8 +5,8 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package GutenCore
+ * @since GutenCore 1.0.0
  */
 
 if ( have_comments() ) :
@@ -16,13 +16,13 @@ if ( have_comments() ) :
 
 		wp_list_comments(
 			array(
-				'walker'            => new Foundationpress_Comments(),
+				'walker'            => new gutencore_Comments(),
 				'max_depth'         => '',
 				'style'             => 'ol',
 				'callback'          => null,
 				'end-callback'      => null,
 				'type'              => 'all',
-				'reply_text'        => __( 'Reply', 'foundationpress' ),
+				'reply_text'        => __( 'Reply', 'gutencore' ),
 				'page'              => '',
 				'per_page'          => '',
 				'avatar_size'       => 48,
@@ -31,13 +31,13 @@ if ( have_comments() ) :
 				'format'            => 'html5',
 				'short_ping'        => false,
 				'echo'              => true,
-				'moderation'        => __( 'Your comment is awaiting moderation.', 'foundationpress' ),
+				'moderation'        => __( 'Your comment is awaiting moderation.', 'gutencore' ),
 			)
 		);
 
 		?>
 		<?php
-			foundationpress_the_comments_pagination();
+			gutencore_the_comments_pagination();
 	 	?>
 	</section>
 <?php
@@ -51,12 +51,12 @@ endif;
 	Prevent access to this file directly
 	*/
 
-	defined( 'ABSPATH' ) || die( __( 'Please do not load this page directly. Thanks!', 'foundationpress' ) );
+	defined( 'ABSPATH' ) || die( __( 'Please do not load this page directly. Thanks!', 'gutencore' ) );
 
 	if ( post_password_required() ) { ?>
 	<section id="comments">
 		<div class="notice">
-			<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'foundationpress' ); ?></p>
+			<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'gutencore' ); ?></p>
 		</div>
 	</section>
 	<?php

@@ -2,8 +2,8 @@
 /**
  * Allow users to select Topbar or Offcanvas menu. Adds body class of offcanvas or topbar based on which they choose.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package GutenCore
+ * @since GutenCore 1.0.0
  */
 
 if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :
@@ -14,15 +14,15 @@ if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :
 			'mobile_menu_settings', array(
 				'priority'       => 1000,
 				'theme_supports' => '',
-				'title'          => __( 'Mobile Menu Settings', 'foundationpress' ),
-				'description'    => __( 'Controls the mobile menu', 'foundationpress' ),
+				'title'          => __( 'Mobile Menu Settings', 'gutencore' ),
+				'description'    => __( 'Controls the mobile menu', 'gutencore' ),
 			)
 		);
 
 		// Create custom field for mobile navigation layout
 		$wp_customize->add_section(
 			'mobile_menu_layout', array(
-				'title'    => __( 'Mobile navigation layout', 'foundationpress' ),
+				'title'    => __( 'Mobile navigation layout', 'gutencore' ),
 				'panel'    => 'mobile_menu_settings',
 				'priority' => 1000,
 			)
@@ -32,7 +32,7 @@ if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :
 		$wp_customize->add_setting(
 			'wpt_mobile_menu_layout',
 			array(
-				'default' => __( 'topbar', 'foundationpress' ),
+				'default' => __( 'topbar', 'gutencore' ),
 			)
 		);
 

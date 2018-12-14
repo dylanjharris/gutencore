@@ -4,8 +4,8 @@
  *
  * Used for both single and index/archive/search.
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * @package GutenCore
+ * @since GutenCore 1.0.0
  */
 
 ?>
@@ -19,17 +19,17 @@
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		}
 	?>
-		<?php foundationpress_entry_meta(); ?>
+		<?php gutencore_entry_meta(); ?>
 	</header>
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php edit_post_link( __( '(Edit)', 'foundationpress' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( '(Edit)', 'gutencore' ), '<span class="edit-link">', '</span>' ); ?>
 	</div>
 	<footer>
 		<?php
 			wp_link_pages(
 				array(
-					'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'foundationpress' ),
+					'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'gutencore' ),
 					'after'  => '</p></nav>',
 				)
 			);

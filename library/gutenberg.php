@@ -1,32 +1,32 @@
 <?php
 
-if ( ! function_exists( 'foundationpress_gutenberg_support' ) ) :
-	function foundationpress_gutenberg_support() {
+if ( ! function_exists( 'gutencore_gutenberg_support' ) ) :
+	function gutencore_gutenberg_support() {
 
     // Add foundation color palette to the editor
     add_theme_support( 'editor-color-palette', array(
         array(
-            'name' => __( 'Primary Color', 'foundationpress' ),
+            'name' => __( 'Primary Color', 'gutencore' ),
             'slug' => 'primary',
             'color' => '#1779ba',
         ),
         array(
-            'name' => __( 'Secondary Color', 'foundationpress' ),
+            'name' => __( 'Secondary Color', 'gutencore' ),
             'slug' => 'secondary',
             'color' => '#767676',
         ),
         array(
-            'name' => __( 'Success Color', 'foundationpress' ),
+            'name' => __( 'Success Color', 'gutencore' ),
             'slug' => 'success',
             'color' => '#3adb76',
         ),
         array(
-            'name' => __( 'Warning color', 'foundationpress' ),
+            'name' => __( 'Warning color', 'gutencore' ),
             'slug' => 'warning',
             'color' => '#ffae00',
         ),
         array(
-            'name' => __( 'Alert color', 'foundationpress' ),
+            'name' => __( 'Alert color', 'gutencore' ),
             'slug' => 'alert',
             'color' => '#cc4b37',
         )
@@ -34,5 +34,5 @@ if ( ! function_exists( 'foundationpress_gutenberg_support' ) ) :
 
 	}
 
-	add_action( 'after_setup_theme', 'foundationpress_gutenberg_support' );
+	add_action( 'after_setup_theme', 'gutencore_gutenberg_support' );
 endif;
