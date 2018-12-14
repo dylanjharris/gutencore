@@ -492,15 +492,15 @@ get_header(); ?>
                         <div class="row">
                             <fieldset class="large-6 columns">
                                 <legend>Choose Your Favorite</legend>
-                                <input type="radio" name="pokemon" value="Red" id="pokemonRed" required><label for="pokemonRed">Red</label>
-                                <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
-                                <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">Yellow</label>
+                                <input type="radio" name="pokemon" value="Red" id="pokemonRed2" required><label for="pokemonRed2">Red</label>
+                                <input type="radio" name="pokemon" value="Blue" id="pokemonBlue2"><label for="pokemonBlue2">Blue</label>
+                                <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow2"><label for="pokemonYellow2">Yellow</label>
                             </fieldset>
                             <fieldset class="large-6 columns">
                                 <legend>Check these out</legend>
-                                <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-                                <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
-                                <input id="checkbox3" type="checkbox"><label for="checkbox3">Checkbox 3</label>
+                                <input id="checkbox4" type="checkbox"><label for="checkbox4">Checkbox 1</label>
+                                <input id="checkbox5" type="checkbox"><label for="checkbox5">Checkbox 2</label>
+                                <input id="checkbox6" type="checkbox"><label for="checkbox6">Checkbox 3</label>
                             </fieldset>
                         </div>
                         <div class="row">
