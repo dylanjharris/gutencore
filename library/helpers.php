@@ -61,6 +61,24 @@ if ( ! function_exists( 'strpos_arr' ) ) :
 endif;
 
 
+
+/*----------------------------------------------djh Dec 14, 2018
+  Simple Minify a String
+  - replace multiple spaces with single space
+  - replace new lines and returns with nothing
+----------------------------------------------*/
+if ( ! function_exists( 'simple_string_minify' ) ) :
+	function simple_string_minify($string='') {
+        // turn multiple spaces into single space
+		$string = preg_replace('!\s+!', ' ', $string);
+        // purge newlines and returns
+        $string = str_replace(array("\r", "\n"), '', $string);
+		return $string;
+	}
+endif;
+
+
+
 /*----------------------------------------------djh Dec 14, 2018
   Calculate content width %'s based on sidebar width
 ----------------------------------------------*/

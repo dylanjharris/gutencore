@@ -118,31 +118,36 @@ if ( ! function_exists('gutencore_theme_settings_override') ) {
                 $sidebars_left_grid_width  = 3;
                 $sidebars_right_grid_width = 3;
             }
-            // see library/helpers.php
-            $grid_chunks = calc_grid_chunks(array($sidebars_left_grid_width,$sidebars_right_grid_width),12);
+            if ( intval($sidebars_left_grid_width) !== 3 && intval($sidebars_right_grid_width) !== 3 ) {
 
-            $custom_css .= '@media print, screen and (min-width: 40em) {
-                    .main-grid.sidebar-both .sidebar.sidebar-left {
-                        width: calc('.$grid_chunks["sidebar0"].' - 1.875rem);
+                // see library/helpers.php
+                $grid_chunks = calc_grid_chunks(array($sidebars_left_grid_width,$sidebars_right_grid_width),12);
+
+                $custom_css .= '@media print, screen and (min-width: 40em) {
+                        .main-grid.sidebar-both .sidebar.sidebar-left {
+                            width: calc('.$grid_chunks["sidebar0"].' - 1.875rem);
+                        }
                     }
-                }
-                @media print, screen and (min-width: 40em) {
-                    .main-grid.sidebar-both .sidebar.sidebar-right {
-                        width: calc('.$grid_chunks["sidebar1"].' - 1.875rem);
+                    @media print, screen and (min-width: 40em) {
+                        .main-grid.sidebar-both .sidebar.sidebar-right {
+                            width: calc('.$grid_chunks["sidebar1"].' - 1.875rem);
+                        }
                     }
-                }
-                @media print, screen and (min-width: 40em) {
-                    .main-grid.sidebar-both .main-content.narrow {
-                        width: calc('.$grid_chunks["content"].' - 1.875rem);
+                    @media print, screen and (min-width: 40em) {
+                        .main-grid.sidebar-both .main-content.narrow {
+                            width: calc('.$grid_chunks["content"].' - 1.875rem);
+                        }
                     }
-                }
-            ';
+                ';
+
+            }
 
         }
         // turn multiple spaces into single space
-        $custom_css = preg_replace('!\s+!', ' ', $custom_css);
+        // $custom_css = preg_replace('!\s+!', ' ', $custom_css);
         // purge newlines
-        return str_replace(array("\r", "\n"), '', $custom_css);
+        // return str_replace(array("\r", "\n"), '', $custom_css);
+        return  simple_string_minify($custom_css);
     }
 }
 
