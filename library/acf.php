@@ -99,6 +99,7 @@ if ( ! function_exists('gutencore_theme_settings_override') ) {
         //     $footer_container_max_width = get_option( 'options_uc_footer_container_max_width' );
         //     $custom_css .= '.footer-container{max-width:'.$footer_container_max_width.'rem}';
         // }
+        return $custom_css;
     }
 }
 
