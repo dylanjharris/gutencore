@@ -35,9 +35,14 @@ endif;
 
 if ( ! function_exists( 'gutencore_scripts' ) ) :
 	function gutencore_scripts() {
+		$version = gutencore_current_version();
 
 		// Enqueue the main Stylesheet.
-		wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . gutencore_asset_path( 'app.css' ), array(), '2.10.4', 'all' );
+		wp_enqueue_style( 'gutencore-styles', get_stylesheet_directory_uri() . '/dist/assets/css/' . gutencore_asset_path( 'app.css' ), array(), $version, 'all' );
+
+		// Enqueue Theme Settings modifications — djh Dec. 14th 2018
+		$custom_css = gutencore_theme_settings_override();
+		wp_add_inline_style( 'gutencore-styles', $custom_css );
 
 		// Deregister the jquery version bundled with WordPress.
 		wp_deregister_script( 'jquery' );
@@ -55,7 +60,7 @@ if ( ! function_exists( 'gutencore_scripts' ) ) :
 		// wp_enqueue_script( 'jquery-migrate' );
 
 		// Enqueue Foundation scripts
-		wp_enqueue_script( 'foundation', get_stylesheet_directory_uri() . '/dist/assets/js/' . gutencore_asset_path( 'app.js' ), array( 'jquery' ), '2.10.4', true );
+		wp_enqueue_script( 'foundation', get_stylesheet_directory_uri() . '/dist/assets/js/' . gutencore_asset_path( 'app.js' ), array( 'jquery' ), $version, true );
 
 		// Enqueue FontAwesome from CDN. Uncomment the line below if you need FontAwesome.
 		//wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/5016a31c8c.js', array(), '4.7.0', true );

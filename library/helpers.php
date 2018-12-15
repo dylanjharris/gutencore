@@ -61,6 +61,128 @@ if ( ! function_exists( 'strpos_arr' ) ) :
 endif;
 
 
+/*----------------------------------------------djh Dec 14, 2018
+  Calculate content width %'s based on sidebar width
+----------------------------------------------*/
+if ( ! function_exists( 'calc_grid_chunks' ) ) :
+	function calc_grid_chunks($known=array(4),$grid=12) {
+		$output = array();
+		$known_total = 0;
+		foreach ($known as $key => $value) {
+			$known_total += intval($value);
+			$knownkey = 'sidebar' . $key;
+			$output[$knownkey] = convert_grid_to_perc(intval($value),$grid,'sidebar');
+		}
+		$unknown_total = 12 - $known_total;
+		$content_width = convert_grid_to_perc($unknown_total,$grid,'content');
+		$output['content'] = $content_width;
+
+		return $output;
+	}
+endif;
+
+
+
+/*----------------------------------------------djh Dec 14, 2018
+  Convert column int to percentage
+----------------------------------------------*/
+if ( ! function_exists( 'convert_grid_to_perc' ) ) :
+	function convert_grid_to_perc($column,$grid,$where) {
+		$output = '100%';
+		// force 12 column grid until further notice
+		if ( $grid !== 12 ) {
+			$grid = 12;
+		}
+		if ( $where === 'sidebar' ) {
+			switch (intval($column)) {
+			    case 1:
+			        $output = '8.33333%';
+			        break;
+			    case 2:
+			        $output = '16.66666%';
+			        break;
+			    case 3:
+			        $output = '25%';
+			        break;
+			    case 4:
+			        $output = '33.33333%';
+			        break;
+			    case 5:
+			        $output = '41.66666%';
+			        break;
+			    case 6:
+			        $output = '50%';
+			        break;
+			    case 7:
+			        $output = '58.33333%';
+			        break;
+			    case 8:
+			        $output = '66.66666%';
+			        break;
+			    case 9:
+			        $output = '75%';
+			        break;
+			    case 10:
+			        $output = '83.33333%';
+			        break;
+			    case 11:
+			        $output = '91.66666%';
+			        break;
+			    case 12:
+			        $output = '100%';
+			        break;
+			}
+		} else if ( $where === 'content' ) {
+			switch (intval($column)) {
+			    case 1:
+			        $output = '8.33334%';
+			        break;
+			    case 2:
+			        $output = '16.66667%';
+			        break;
+			    case 3:
+			        $output = '25%';
+			        break;
+			    case 4:
+			        $output = '33.33334%';
+			        break;
+			    case 5:
+			        $output = '41.66667%';
+			        break;
+			    case 6:
+			        $output = '50%';
+			        break;
+			    case 7:
+			        $output = '58.33334%';
+			        break;
+			    case 8:
+			        $output = '66.66667%';
+			        break;
+			    case 9:
+			        $output = '75%';
+			        break;
+			    case 10:
+			        $output = '83.33334%';
+			        break;
+			    case 11:
+			        $output = '91.66667%';
+			        break;
+			    case 12:
+			        $output = '100%';
+			        break;
+			}
+		}
+		return $output;
+	}
+endif;
+
+
+
+
+
+
+
+
 
 
 

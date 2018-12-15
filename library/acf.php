@@ -47,3 +47,69 @@ if ( ! function_exists('undercore_disable_cart_fragments') ) {
     }
     add_action( 'wp_print_scripts', 'undercore_disable_cart_fragments', 100 );
 }
+
+
+
+
+/*----------------------------------------------djh Dec 12, 2018
+  ACF Theme Settings: Generate GutenCore Styles override
+                NOTE: see library/enqueue-scripts.php
+----------------------------------------------*/
+if ( ! function_exists('gutencore_theme_settings_override') ) {
+    function gutencore_theme_settings_override() {
+        $custom_css = '';
+        // .main-container max-width
+        if ( get_option( 'options_uc_main_container_max_width' ) ) {
+            $main_container_max_width = get_option( 'options_uc_main_container_max_width' );
+            if ( intval($main_container_max_width) !== 75 ) { // if not default of 75
+                $custom_css .= 'body .main-container{max-width:'.$main_container_max_width.'rem}';
+            }
+        }
+        // .footer-container max-width
+        if ( get_option( 'options_uc_footer_container_max_width' ) ) {
+            $footer_container_max_width = get_option( 'options_uc_footer_container_max_width' );
+            if ( intval($footer_container_max_width) !== 75 ) { // if not default of 75
+                $custom_css .= '.footer-container{max-width:'.$footer_container_max_width.'rem}';
+            }
+        }
+        if ( get_option( 'options_uc_sidebar_left_grid_width' ) ) {
+            $sidebar_left_grid_width = get_option( 'options_uc_sidebar_left_grid_width' );
+            if ( intval( $sidebar_left_grid_width !== 4 ) ) {
+                $grid_chunks = calc_grid_chunks(array($sidebar_left_grid_width),12); // see library/helpers.php
+                $custom_css .= '
+                    @media print, screen and (min-width: 40em) {
+                        .main-grid .sidebar-left {
+                            width: calc('.$grid_chunks["sidebar0"].' - 1.875rem);
+                        }
+                    }
+                    @media print, screen and (min-width: 40em) {
+                        .main-grid .main-content {
+                            width: calc('.$grid_chunks["content"].' - 1.875rem);
+                        }
+                    }
+                ';
+
+            }
+
+        }
+
+
+
+        // // .sidebar max-width
+        // if ( get_option( 'options_uc_footer_container_max_width' ) ) {
+        //     $footer_container_max_width = get_option( 'options_uc_footer_container_max_width' );
+        //     $custom_css .= '.footer-container{max-width:'.$footer_container_max_width.'rem}';
+        // }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
