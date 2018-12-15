@@ -15,16 +15,31 @@
     @include breakpoint(small) {
       .main-content { order: 1; }
       .sidebar { order: 2; }
-      .sidebar + .sidebar { order: 3; }
     }
 
     // ... and to the left on medium-up screens, when using the sidebar-left template
     @include breakpoint(medium) {
       .main-content { order: 2; }
       .sidebar { order: 1; }
-      .sidebar + .sidebar { order: 3; }
     }
   }
+
+  &.sidebar-both {
+    // Place the sidebars below main content on small screens ...
+    @include breakpoint(small) {
+      .main-content { order: 1; }
+      .sidebar-left { order: 2; }
+      .sidebar-right { order: 3; }
+    }
+
+    // ...and to the left/right on medium-up screens, when using the sidebar-both template
+    @include breakpoint(medium) {
+      .main-content { order: 2; }
+      .sidebar-left { order: 1; }
+      .sidebar-right { order: 3; }
+    }
+  }
+
 
   // Full width template
   .main-content-full-width {
@@ -40,6 +55,11 @@
     @include breakpoint(medium) {
       @include xy-cell(8);
     }
+    &.narrow {
+      @include breakpoint(medium) {
+        @include xy-cell(6);
+      }
+    }
   }
 
   .sidebar {
@@ -51,6 +71,22 @@
       @include xy-cell(4);
       margin-top: 1rem;
     }
+    &.sidebar-left {
+      @include breakpoint(medium) {
+        @include xy-cell(3);
+      }
+    }
+    &.sidebar-right {
+      @include breakpoint(medium) {
+        @include xy-cell(3);
+      }
+    }
 
   }
 }
+
+
+
+
+
+

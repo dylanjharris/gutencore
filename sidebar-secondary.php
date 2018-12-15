@@ -7,6 +7,6 @@
  */
 
 ?>
-<aside class="sidebar">
+<aside class="sidebar sidebar-right">
 	<?php dynamic_sidebar( 'sidebar-secondary' ); ?>
 </aside>
