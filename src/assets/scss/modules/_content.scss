@@ -15,12 +15,14 @@
     @include breakpoint(small) {
       .main-content { order: 1; }
       .sidebar { order: 2; }
+      .sidebar + .sidebar { order: 3; }
     }
 
     // ... and to the left on medium-up screens, when using the sidebar-left template
     @include breakpoint(medium) {
       .main-content { order: 2; }
       .sidebar { order: 1; }
+      .sidebar + .sidebar { order: 3; }
     }
   }
 

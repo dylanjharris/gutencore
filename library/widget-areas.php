@@ -10,8 +10,20 @@ if ( ! function_exists( 'gutencore_sidebar_widgets' ) ) :
 	function gutencore_sidebar_widgets() {
 		register_sidebar(
 			array(
-				'id'            => 'sidebar-widgets',
-				'name'          => __( 'Sidebar widgets', 'gutencore' ),
+				'id'            => 'sidebar-primary',
+				'name'          => __( 'Primary Sidebar', 'gutencore' ),
+				'description'   => __( 'Drag widgets to this sidebar container.', 'gutencore' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h6>',
+				'after_title'   => '</h6>',
+			)
+		);
+
+		register_sidebar(
+			array(
+				'id'            => 'sidebar-secondary',
+				'name'          => __( 'Secondary Sidebar', 'gutencore' ),
 				'description'   => __( 'Drag widgets to this sidebar container.', 'gutencore' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
