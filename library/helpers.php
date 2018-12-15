@@ -73,6 +73,9 @@ if ( ! function_exists( 'simple_string_minify' ) ) :
 		$string = preg_replace('!\s+!', ' ', $string);
         // purge newlines and returns
         $string = str_replace(array("\r", "\n"), '', $string);
+        // compress curly brackets
+        $string = str_replace('{ ', '{', $string);
+        $string = str_replace(' }', '}', $string);
 		return $string;
 	}
 endif;
