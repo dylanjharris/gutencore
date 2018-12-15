@@ -110,9 +110,9 @@ if ( ! function_exists('gutencore_theme_settings_override') ) {
             }
 
         }
-        if ( get_option( 'uc_sidebars_left_grid_width' ) && get_option( 'uc_sidebars_right_grid_width' ) ) {
-            $sidebars_left_grid_width  = get_option( 'uc_sidebars_left_grid_width' );
-            $sidebars_right_grid_width = get_option( 'uc_sidebars_right_grid_width' );
+        if ( get_option( 'options_uc_sidebars_left_grid_width' ) && get_option( 'options_uc_sidebars_right_grid_width' ) ) {
+            $sidebars_left_grid_width  = get_option( 'options_uc_sidebars_left_grid_width' );
+            $sidebars_right_grid_width = get_option( 'options_uc_sidebars_right_grid_width' );
             // see library/helpers.php
             $grid_chunks = calc_grid_chunks(array($sidebars_left_grid_width,$sidebars_right_grid_width),12);
 
