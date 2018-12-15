@@ -139,6 +139,9 @@ if ( ! function_exists('gutencore_theme_settings_override') ) {
             ';
 
         }
+        // turn multiple spaces into single space
+        $custom_css = preg_replace('!\s+!', ' ', $custom_css);
+        // purge newlines
         return str_replace(array("\r", "\n"), '', $custom_css);
     }
 }
