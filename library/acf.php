@@ -76,8 +76,7 @@ if ( ! function_exists('gutencore_theme_settings_override') ) {
             $sidebar_left_grid_width = get_option( 'options_uc_sidebar_left_grid_width' );
             if ( intval( $sidebar_left_grid_width !== 4 ) ) {
                 $grid_chunks = calc_grid_chunks(array($sidebar_left_grid_width),12); // see library/helpers.php
-                $custom_css .= '
-                    @media print, screen and (min-width: 40em) {
+                $custom_css .= '@media print, screen and (min-width: 40em) {
                         .main-grid.sidebar-left .sidebar {
                             width: calc('.$grid_chunks["sidebar0"].' - 1.875rem);
                         }
