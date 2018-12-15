@@ -110,16 +110,31 @@ if ( ! function_exists('gutencore_theme_settings_override') ) {
             }
 
         }
+        if ( get_option( 'uc_sidebars_left_grid_width' ) && get_option( 'uc_sidebars_right_grid_width' ) ) {
+            $sidebars_left_grid_width  = get_option( 'uc_sidebars_left_grid_width' );
+            $sidebars_right_grid_width = get_option( 'uc_sidebars_right_grid_width' );
+            // see library/helpers.php
+            $grid_chunks = calc_grid_chunks(array($sidebars_left_grid_width,$sidebars_right_grid_width),12);
 
+            $custom_css .= '
+                @media print, screen and (min-width: 40em) {
+                    .main-grid.sidebar-both .sidebar.sidebar-left {
+                        width: calc('.$grid_chunks["sidebar0"].' - 1.875rem);
+                    }
+                }
+                @media print, screen and (min-width: 40em) {
+                    .main-grid.sidebar-both .sidebar.sidebar-right {
+                        width: calc('.$grid_chunks["sidebar1"].' - 1.875rem);
+                    }
+                }
+                @media print, screen and (min-width: 40em) {
+                    .main-grid .main-content.narrow {
+                        width: calc('.$grid_chunks["content"].' - 1.875rem);
+                    }
+                }
+            ';
 
-
-
-
-        // // .sidebar max-width
-        // if ( get_option( 'options_uc_footer_container_max_width' ) ) {
-        //     $footer_container_max_width = get_option( 'options_uc_footer_container_max_width' );
-        //     $custom_css .= '.footer-container{max-width:'.$footer_container_max_width.'rem}';
-        // }
+        }
         return $custom_css;
     }
 }
