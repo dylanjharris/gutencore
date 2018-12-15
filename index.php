@@ -10,7 +10,7 @@
  * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
  *
  * @package GutenCore
- * @since GutenCore 1.0.0
+ * @since GutenCore 1.0.0 
  */
 
 get_header(); ?>
