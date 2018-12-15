@@ -78,12 +78,12 @@ if ( ! function_exists('gutencore_theme_settings_override') ) {
                 $grid_chunks = calc_grid_chunks(array($sidebar_left_grid_width),12); // see library/helpers.php
                 $custom_css .= '
                     @media print, screen and (min-width: 40em) {
-                        .main-grid .sidebar-left {
+                        .main-grid.sidebar-left .sidebar {
                             width: calc('.$grid_chunks["sidebar0"].' - 1.875rem);
                         }
                     }
                     @media print, screen and (min-width: 40em) {
-                        .main-grid .main-content {
+                        .main-grid.sidebar-left .main-content {
                             width: calc('.$grid_chunks["content"].' - 1.875rem);
                         }
                     }
