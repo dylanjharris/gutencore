@@ -116,8 +116,7 @@ if ( ! function_exists('gutencore_theme_settings_override') ) {
             // see library/helpers.php
             $grid_chunks = calc_grid_chunks(array($sidebars_left_grid_width,$sidebars_right_grid_width),12);
 
-            $custom_css .= '
-                @media print, screen and (min-width: 40em) {
+            $custom_css .= '@media print, screen and (min-width: 40em) {
                     .main-grid.sidebar-both .sidebar.sidebar-left {
                         width: calc('.$grid_chunks["sidebar0"].' - 1.875rem);
                     }
@@ -128,7 +127,7 @@ if ( ! function_exists('gutencore_theme_settings_override') ) {
                     }
                 }
                 @media print, screen and (min-width: 40em) {
-                    .main-grid .main-content.narrow {
+                    .main-grid.sidebar-both .main-content.narrow {
                         width: calc('.$grid_chunks["content"].' - 1.875rem);
                     }
                 }
