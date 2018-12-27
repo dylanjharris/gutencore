@@ -37,6 +37,7 @@ if ( ! function_exists( 'gutencore_scripts' ) ) :
 	function gutencore_scripts() {
 		$version = gutencore_current_version();
 
+
 		// Enqueue the main Stylesheet.
 		wp_enqueue_style( 'gutencore-styles', get_stylesheet_directory_uri() . '/dist/assets/css/' . gutencore_asset_path( 'app.css' ), array(), $version, 'all' );
 
